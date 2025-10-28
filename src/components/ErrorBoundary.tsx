@@ -1,6 +1,4 @@
-// src/components/ErrorBoundary.tsx
-import React, { Component } from "react";
-import type { ReactNode, ErrorInfo } from "react";
+import { Component, type ReactNode, type ErrorInfo } from "react";
 
 interface Props {
   children: ReactNode;
@@ -22,7 +20,13 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   render() {
-    if (this.state.hasError) return <div className="p-4 text-red-600">Terjadi kesalahan, coba lagi nanti.</div>;
+    if (this.state.hasError) {
+      return (
+        <div className="p-4 text-red-600 text-center font-semibold bg-red-50 rounded-lg">
+          ⚠️ Terjadi kesalahan, coba lagi nanti.
+        </div>
+      );
+    }
     return this.props.children;
   }
 }
