@@ -1,11 +1,14 @@
 // src/App.tsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
-import Cart from "./pages/Cart"; // 🔥 Impor komponen Cart
+import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -13,7 +16,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 // Contexts
 import { AuthProvider } from "./contexts/AuthContext";
 import { ProductProvider } from "./contexts/ProductContext";
-import { CartProvider } from "./contexts/CartContext"; // 🔥 Tambahkan ini
+import { CartProvider } from "./contexts/CartContext";
 
 const App: React.FC = () => {
   return (
@@ -25,10 +28,12 @@ const App: React.FC = () => {
             <CartProvider>
               <Navbar />
               <Routes>
-                <Route path="/" element={<Navigate to="/products" />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
-                <Route path="/cart" element={<Cart />} /> {/* 🔥 Tambahkan rute untuk keranjang */}
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/login" element={<Login />} />
 
                 {/* Hanya admin yang bisa ke dashboard */}
