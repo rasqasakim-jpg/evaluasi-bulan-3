@@ -1,5 +1,6 @@
 // src/pages/Home.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   return (
@@ -14,18 +15,18 @@ const Home: React.FC = () => {
             Platform belanja online terpercaya dengan berbagai pilihan produk berkualitas untuk kebutuhan Anda
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/products"
+            <Link
+              to="/products"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Jelajahi Produk
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400 font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-blue-600 dark:border-blue-400"
             >
               Tentang Kami
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -70,12 +71,12 @@ const Home: React.FC = () => {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Daftar sekarang dan dapatkan penawaran menarik untuk pembelian pertama Anda
           </p>
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block bg-white text-blue-600 font-bold px-10 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Daftar / Login
-          </a>
+          </Link>
         </div>
       </div>
     </div>
